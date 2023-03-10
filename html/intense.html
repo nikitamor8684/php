@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+    
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    body{
+        background-color: antiquewhite;
+    }
+    .flex-container{
+        display:flex;
+        /* flex-wrap: wrap; */
+        flex-direction: row;
+    }
+    
+    .flex-item1{
+        width:18%;
+        background-color: yellow;
+        height:700px;
+    }
+    .link{
+        height:40px;
+        width:240px;
+        background-color: #C0C0C0;
+        margin:2px;
+    }
+    .bi-house-door,.bi-card-list,.bi-gear,.bi-trophy{
+        display: inline-block;
+        color:white;
+        margin-right:20px;
+    }
+    a{
+        display:inline-block;
+        margin-top:10px;
+        color:white;
+        text-decoration: none;
+    }
+    #footer{
+        background-color: grey;
+        color: #C0C0C0;
+    }
+    .bi-youtube,.bi-twitter,.bi-facebook,.bi-linkedin{
+        color: #C0C0C0;
+    }
+    .flex-item2{
+        background-color: whitesmoke;
+        /* float:left; */
+        width:80%;
+        margin-left:20px;
+    }
+    .flex-item3{
+        height:400px;
+        width:80%;
+        background-color:wheat;
+        display:flex;
+        flex-direction:row;
+            }
+            .flex-item3a{
+                background-color:white;
+                display:inline-block;
+                margin-right:10px;
+            }
+            .flex-item3b{
+                display:inline-block;
+                float:left;
+                background-color: whitesmoke;
+            }
+
+</style>
+<body>
+    <div class="flex-container">
+        <div class="flex-item1">
+            <div><img src="logo-white.png"  height="70px"></div>
+            <div class="link"><a href="home.html"><i class="bi bi-house-door"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
+                  </svg>Home</a></div>
+            <div class="link"><a href="summary.html"><i class="bi bi-card-list"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                    <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                  </svg>Summary</a></div>
+            <div class="link"><a href="tools.html"><i class="bi bi-gear"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                    <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                    <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                  </svg>Tools and services</a></div>
+            <div class="link"><a href="plans.html"><i class="bi bi-trophy"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trophy" viewBox="0 0 16 16">
+                    <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z"/>
+                  </svg>Plans
+            </a></div>
+<br><br>
+            <h3 style="color:blue">Michael Smith</h3>
+           <p style="color:gray"> Account No.:1234567890<br>................................................<br>
+DOB: 12 Dec 1991<br>................................................<br>
+Statement Date: 01 Jan 2023<br>................................................<br>
+Mobile No.: 1-818-331-8212<br>................................................<br>
+Email Address: michael.smith@gmail.com<br>................................................<br>
+Address: 599-401 E 16th St Santa Ana, CA 92701, USA</p>
+<div id="footer">connect with us!
+    <a href="#"><i class="bi bi-facebook"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+      </svg></a>
+      <a href="#"><i class="bi bi-linkedin"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+      </svg></a>
+      <a href="#"><i class="bi bi-twitter"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+      </svg></a>
+      <a href="#"><i class="bi bi-youtube"></i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+        <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+      </svg></a>
+</div>
+</div>
+<div>
+        <div class="flex-item2">
+        <h4>Yous statement details</h4><hr>
+     <table border="1" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Term/Installment</th>
+                <th>Premium/Due Amount (USD)</th>
+                <th>Due Date</th>
+                <th>Transaction Type</th>
+                <th>Discount Applied</th>
+                <th>Tax</th>
+                <th>Partial Withdrawal/Others</th>
+                <th>Net Premium Invested</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>250</td>
+                <td>25 September 2022</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+2.0</td>
+                <td>0</td>
+                <td>250</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>250</td>
+                <td>25 October 2022</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+1.0</td>
+                <td>0</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>250</td>
+                <td>25 November 2022</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+2.5</td>
+                <td>0</td>
+                <td>750</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>250</td>
+                <td>25 December 2022</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+1.5</td>
+                <td>0</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>250</td>
+                <td>25 January 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+1.0</td>
+                <td>0</td>
+                <td>1250</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>250</td>
+                <td>25 February 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+2.0</td>
+                <td>0</td>
+                <td>1500</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>250</td>
+                <td>25 March 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+1.0</td>
+                <td>0</td>
+                <td>1750</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>250</td>
+                <td>25 April 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+1.5</td>
+                <td>0</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>250</td>
+                <td>25 May 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+2.0</td>
+                <td>0</td>
+                <td>2250</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>250</td>
+                <td>25 June 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+2.5</td>
+                <td>0</td>
+                <td>2500</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>250</td>
+                <td>25 July 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+1.0</td>
+                <td>0</td>
+                <td>2750</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>250</td>
+                <td>25 August 2023</td>
+                <td>Online</td>
+                <td>NA</td>
+                <td>+1.5</td>
+                <td>0</td>
+                <td>3000</td>
+            </tr>
+        </tbody>
+     </table>
+     <hr style="color:yellow;">
+     </div>
+     <div class="flex-item3">
+        <span class="flex-item3a">
+<h3>Your statement summary</h3>
+        </span>
+        
+            <!-- <span style="background-color:whitesmoke"> -->
+                <span style="background-color:whitesmoke">
+            <h1 style="color:goldenrod">SECURES</h1>
+            <h2 style="color:dodgerblue">EVERY STEP</h2>
+            <h2 style="color:dodgerblue">OF LIFE</h2>
+            <hr style="color:yellow" width="4px"ss>
+            </span>
+            <span class="flex-item3b">
+                <img src="logo-white.png" height="40px">
+            </span>
+            <!-- </span> -->
+        
+     </div>
+     </div>
+    </div>
+</body>
+</html>
