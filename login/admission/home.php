@@ -94,7 +94,12 @@
             margin-top:20px;
             margin-right:80px;
         }
-    
+    .student{
+        background-color:white;
+        /* overflow:hidden; */
+        overflow-x:scroll;
+        overflow-y:scroll;
+    }
         /* input:checked~div.nav{
             width:20%;
         }
@@ -166,7 +171,37 @@ echo "<br>";
             <li><a href="admission1.php" class="std">students</a></li>
         </ul>
         </div>
+        </div>
+<div class="ab parent_box">
+ 
+<a href="#">
+    <span class="box">
+        Active Student
+        <?php
+echo "$active";
+        ?>
+    </span></a>
+   <a href="#"> <span class="box">
+        Total Students
+        <?php
+echo "$max";
+        ?>
 
+    </span></a>
+   <a href="#"> <span class="box">
+        Total Amount Received Today 
+        <?php
+echo "$amount";
+        ?>
+    </span></a>
+    </div>
+
+    
+    <div class="student">
+<?php
+// include "admission1.php";
+?>
+        </div>
         <div class='courses'>
             <h1 style="color:white">Courses</h1>
             <h3>Basics of computer</h3>
@@ -192,33 +227,6 @@ echo "<br>";
             <h3>Autocad</h3>
             <h3>English Speaking</h3>
             <h3>Coaching for govt. jobs</h3>
-        </div>
-<div class="ab parent_box">
- 
-<a href="#">
-    <span class="box">
-        Active Student
-        <?php
-echo "$active";
-        ?>
-    </span></a>
-   <a href="#"> <span class="box">
-        Total Students
-        <?php
-echo "$max";
-        ?>
-
-    </span></a>
-   <a href="#"> <span class="box">
-        Total Amount Received Today 
-        <?php
-echo "$amount";
-        ?>
-    </span></a>
-    </div>
-    
-    
-
 </body>
 
 
