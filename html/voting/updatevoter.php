@@ -42,10 +42,8 @@ margin-left:15px;
 </head>
 <body>
     <div class="box">
-        <!-- <form action="" method="post"> -->
-<label for="voterid">Voter id</label>
-<input type="text" name="voterid">
-<input type="submit" value="Go"><br><br>
+        <form action="" method="post">
+
 <label for="name">Name</label>
 <input type="text" name="name"><br><br>
 <label for="sex">Sex</label>
@@ -54,13 +52,35 @@ margin-left:15px;
 <input type="text" name="age"><br><br>
 <label for="city">City</label>
 <input type="text" name="city"><br><br>
+<label for="name1"> Pet Name</label>
+<input type="text" name="name1"><br><br>
+<button>UPDATE</button>
 
-<button><a href="#">Update</a></button>
 
-<button><a href="#">Back</a></button>
 
-        <!-- </form> -->
+        </form>
 </div>
+<?php
+    include "conn7.php";
+    $update= $_GET['updateid'];
 
+
+    $name=$email=$pass="";
+    if ($_SERVER ['REQUEST_METHOD']=="POST"){
+    $name1=$_POST['name1'];
+    $name=$_POST['name'];
+    $sex=$_POST['sex'];
+    $age= $_POST['age'];
+    $city=$_POST['city'];
+    $sql="UPDATE voter SET name='$name',sex='$sex',age='$age',city='$city', petname='$name1' where voterid='$update'";
+    $result=mysqli_query($conn7,$sql);
+    
+    
+    if($result)
+    {
+        header("location:displayvoter.php");
+    }
+}
+   ?> 
 </body>
 </html>

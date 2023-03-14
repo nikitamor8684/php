@@ -40,37 +40,45 @@
 <body>
    
 
-
+    <a href="candidate.php"> <button id="add">ADD</button> </a>
  
     <table border="0" cellspacing="0" cellpadding="0" width="90%">
         <tr>
             <th>#</th>
-            <th>PARTY NAME</th>
-            <th>TOTAL VOTES</th>
-         
+            <th>SYMBOL</th>
+            <th>NAME</th>
+            <th>SEX</th>
+            <th>AGE</th>
+            <th>CITY</th>
+            <th>UPDATE/DELETE</th>
         </tr>
          <?php
      include "conn7.php";
      
      $sql = "SELECT * FROM candidate";
      $result = mysqli_query($conn7,$sql);
-    
-
-     if($result){
+     
+     if(mysqli_num_rows($result)>0){
          while($row=mysqli_fetch_assoc($result)){
              echo "<tr>";
              $id=$row['candidateid'];
-             $symbol=$row['symbol'];
-             $sql1="SELECT * FROM votes where partyname='$symbol'";
-             $result1=mysqli_query($conn7,$sql1);
-            $votes= mysqli_num_rows($result1);
-         if($result1){
              echo"<td>".$row['candidateid']."</td>";
-
              echo"<td>".$row['symbol']."</td>";
-             echo"<td>".$votes."</td>";
+             echo"<td>".$row['name']."</td>";
+            echo"<td>".$row['sex']."</td>";
+            echo"<td>".$row['age']."</td>";
+            echo"<td>".$row['city']."</td>";
+
+            echo "<td>";
+           echo "<a href='updatecandidate.php?updateid=$id'>";
+            echo "<button  class='update'>Update</button>";
+           echo "</a>";
+           echo "<a href='deletecandidate.php?deleteid=$id'>";
+            echo "<button  class='delete'>Delete</button>";
+           echo "</a>";
+           echo "</td>"; 
            echo "</tr>"; 
-         }
+   
         }    
     }
          
@@ -78,3 +86,5 @@
      ?>
     
     </table> 
+         </body>
+</html>

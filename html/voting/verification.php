@@ -32,14 +32,53 @@
         </style>
 </head>
 <body>
+<?php
+    include "conn7.php";
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $voteid=$_POST['voteid'];
+    echo "$voteid";
+ 
+    $sql = "SELECT * FROM voter where voterid='$voteid'";
+    $result = mysqli_query($conn7,$sql);
+   if($result){
+    // if(mysqli_num_rows($result)>0){
+        header('location:voteparty.php?voterid='.$voteid);
+            }
+            else{
+            $sql1 = "SELECT * FROM votes where voterid='$voteid'";
+            $result1= mysqli_query($conn7,$sql1);
+            if($result1){
+                echo "you have already voted";
+            }
+        }
+            // else{
+            //     echo "you are not eligible for voting";
+            // }
+ 
+}
+
+    ?>
+    <form action="" method="post">
     <h1 align="center">Enter your voter id</h1><br>
-    <input type="text"><br>
+    <input type="text" id="id" name="voteid"><br>
     <input type="radio" id="radio">
     <label for="radio">Forgot voter id</label>
     <div class="box">
-        <button>ok</button>
-        <button>Back</button>
+ 
+            <button>Submit</button>"
+     
+        <button onclick='func()' id="reset">reset</button>
 
 </div>
+</form>
+<script>
+function func(){
+    document.getElementById('id').value="";
+}
+    </script>
+<?php
+   
+?>
+
 </body>
 </html>

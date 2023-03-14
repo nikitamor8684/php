@@ -34,14 +34,14 @@
 </head>
 <body>
     <div>
-        <h1>dgdfg</h1>
-    <button><a href="#">Reset voting</a></button><br><br>
-    <button><a href="#">Add candidates</a></button><br><br>
-    <button><a href="#">Update/Delete candidate</a></button><br><br>
-    <button><a href="#">Add a voter</a></button><br><br>
-    <button><a href="#">Update a voter</a></button><br><br>
-    <button><a href="#">Check results</a></button><br><br>
-    <input type="submit"value="<<Back">
+        <h1>WELCOME</h1>
+    <button><a href="resetvote.php">Reset voting</a></button><br><br>
+    <button><a href="displaycandidate.php">Add/Update candidates</a></button><br><br>
+    <button><a href="displayvoter.php">Add/Update a voter</a></button><br><br>
+    <button><a href="result.php">Check results</a></button><br><br>
+    <button><a href="adminlogin.php">Back</a></button><br><br>
+
+ 
 </div>
 </body>
 </html>

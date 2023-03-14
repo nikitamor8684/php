@@ -41,10 +41,10 @@ margin-top:8px;
 </head>
 <body>
     <div class="box">
-        <!-- <form action="" method="post"> -->
-<label for="symbol">Symbol</label>
-<input type="text" name="symbol">
-<input type="submit" value="Go"><br><br>
+        <form action="" method="post">
+<label for="name">Name</label>
+<input type="text" name="name">
+<br><br>
 <label for="sex">Sex</label>
 <input type="text" name="sex"><br><br>
 <label for="age">Age</label>
@@ -53,12 +53,27 @@ margin-top:8px;
 <input type="text" name="city"><br><br>
 <label for="name1">Enter UR pet name</label>
 <input type="text" name="name1"><br><br>
-<button><a href="#">Update</a></button>
-<button><a href="#">Delete</a></button>
-<button><a href="#">Back</a></button>
+<button>Submit</button>
 
-        <!-- </form> -->
+
+        </form>
 </div>
 
+
+<?php
+if($_SERVER['REQUEST_METHOD']=='POST'){
+include "conn7.php";
+    $name=$_POST['name'];
+    $sex=$_POST['sex'];
+    $age=$_POST['age'];
+    $city=$_POST['city'];
+    $name1=$_POST['name']; 
+
+$sql="INSERT INTO voter(name,sex,age,city,petname) values('$name','$sex','$age','$city','$name1')";
+$result=mysqli_query($conn7,$sql);
+header('location:displayvoter.php');   
+}
+
+?>
 </body>
 </html>

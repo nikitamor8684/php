@@ -25,16 +25,46 @@ font-size:30px;
 font-size:30px;
 
         }
+        button{
+        background-color:yellow;
+        font-size:25px;
+    }
         </style>
 </head>
-<body><div>
-    <!-- <form action="" method="post"> -->
-    <select class="select">
-        <option >BJP</option>
-        <option>Congress</option>
+<body>
+<?php
+include "conn7.php";
+$option="";
+$sql1='SELECT * FROM candidate';
+    $result1 = mysqli_query($conn7,$sql1);
+    
+    if(mysqli_num_rows($result1)>0){
+        while($row=mysqli_fetch_assoc($result1)){
+        $option .="<option>".$row['symbol']."</option>";
+     
+        }}
+        ?>    
+<div>
+    <form action="" method="post">
+    <select class="select" name="party" id="a" >
+        
+   <?php echo $option ?>
 </select>
-<input type="submit" value="vote">
-<!-- </form> -->
+<button  id="vote">vote</button>
+</form>
 </div>
+
+<?php
+include "conn7.php";
+$voteid=$_GET['voterid'];
+if ($_SERVER ['REQUEST_METHOD']=="POST"){
+    $party=$_POST['party'];
+//   echo "$party";
+  $sql="INSERT INTO votes(partyname,voterid) values('$party','$voteid')";
+  $result=mysqli_query($conn7,$sql);
+
+}
+
+?>
 </body>
 </html>

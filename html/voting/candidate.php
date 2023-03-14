@@ -41,7 +41,7 @@
 </head>
 <body>
     <div>
-    <!-- <form action="" method="post"> -->
+    <form action="" method="post">
 <label for="symbol">Party symbol</label>
 <input type="text" name="symbol"><br><br>
 <label for="name">Name</label>
@@ -49,14 +49,36 @@
 <label for="sex">Sex</label>
 <input type="text" name="sex"><br><br>
 <label for="age">Age</label>
-<input type="text" name="Age"><br><br>
+<input type="text" name="age"><br><br>
 <label for="city">City</label>
-<input type="text" name="City"><br><br>
-<button><a href="#">Submit</a></button>
-<button><a href="#">Back</a></button>
-<button><a href="#">Home</a></button>
+<input type="text" name="city"><br><br>
+<button>Submit</button>
 
-    <!-- </form> -->
+
+    </form>
 </div>
+
+<?php
+include "conn7.php";
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $symbol=$_POST['symbol'];
+    $name=$_POST['name'];
+    $sex=$_POST['sex'];
+    $age=$_POST['age'];
+    $city=$_POST['city'];
+      
+$sql1="SELECT * FROM candidate where symbol='$symbol'";
+$result1=mysqli_query($conn7,$sql1);
+if(mysqli_num_rows($result1) > 0){
+    echo "candidate already exist";
+    // header('location:candidate.php');
+}
+else{
+$sql="INSERT INTO candidate(symbol,name,sex,age,city) values('$symbol','$name','$sex','$age','$city')";
+$result=mysqli_query($conn7,$sql);
+header('location:displaycandidate.php');  
+} 
+}
+?>
 </body>
 </html>

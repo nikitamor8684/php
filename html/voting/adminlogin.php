@@ -51,59 +51,37 @@ margin-top:300px;
         input:submit{
             width:200px;
         }
-
+a{
+    display:inline-block;
+    color:black;
+    text-decoration:none;   
+}
    
         </style>
 </head>
 <body>
 <?php
-//    include "conn6.php";
-// $username=$userpass=$useid=$error="";
-// if($_SERVER['REQUEST_METHOD']=="POST"){
-// $useremail=$_POST['useremail'];
-// $userpass=$_POST['userpass'];
+   include "conn7.php";
+$username=$userpass="";
+if($_SERVER['REQUEST_METHOD']=="POST"){
+$username=$_POST['username'];
+$userpass=$_POST['userpass'];
+echo"$username";
+echo"$userpass";
 
-// $query="SELECT * FROM signup WHERE  password='$userpass' AND email='$useremail'";
-// $result=mysqli_query($conn6,$query);
-// if(mysqli_num_rows($result)==1){
-//     $error ="<b style='color:red'>this id already exist</b>";
-// header('location:signup.php');
-// }
-// else{
-//     $sql="INSERT INTO signup(email,password) values ('$useremail','$userpass')";
-//     $result1=mysqli_query($conn6,$sql);
-//     header('location:mail.php');
-// }
-// }
+$query="SELECT * FROM admin WHERE  password='$userpass' AND username='$username'";
+$result=mysqli_query($conn7,$query);
+if(mysqli_num_rows($result)==1){
 
-?>
-<?php
-// if($_SERVER['REQUEST_METHOD']=="POST"){
-//     include "conn6.php";
-//     $email=$_POST['useremail'];
-//     $pass=$_POST['userpass'];
-//     $otp=rand(100000,1000000);
-//     echo "$otp";
-//     $sql1="SELECT * FROM  signup where email='$email' AND password='$pass'";
-//     $result1=mysqli_query($conn6,$sql1);
-//     if(mysqli_num_rows($result1)==1){
-
-
-//     $sql="INSERT INTO otp(email,password,otp) values('$email','$pass','$otp')";
-//     $result=mysqli_query($conn6,$sql);
-//     if($result){
-//         echo "data entered";
-//     }
-//     session_start();
-//   $_SESSION['ab']=$otp;
-// header('location:mail.php');
-// }
-// else {
-//     header('location:signup.php');
-// }
-// }
+header('location:actions.php');
+}
+else{
+ echo"enter correct data";
+}
+}
 
 ?>
+
 
  
 
@@ -116,8 +94,10 @@ margin-top:300px;
     <label for="password"><h2>Enter password</h2></label>
     <input type="text" name="userpass"><br><br>
     
-    <input type="submit" value="ok" id="ok">
-    <input type="submit" value="back" id="back">
+    <button id="ok">ok
+
+    </button>
+   
 
    </form> 
 

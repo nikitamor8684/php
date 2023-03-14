@@ -28,9 +28,7 @@ h3{
     color:white;
 }
 .second{
-    /* display:inline-block; */
     width:100px;
-
     height:40px;
     color:white;
     background-color:red;
@@ -40,13 +38,18 @@ h3{
     margin-left:1000px;
     margin-top:50px;
 }
+a{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+}
         </style>
 </head>
 <body>
     <h1 align="center">Login as</h1>
 
-        <button class="first">Voter</button><br>
-        <button class="first">Election Commisioner</button>
+    <a href="verification.php"><button class="first">Voter</button></a><br>
+    <a href="adminlogin.php"><button class="first">Election Commisioner</button></a>
 <h3 align="center">Now it is not the time for sound bites.i can<br>
 feel the hand of history on my shoulder</h3>
 <div class="second1">
