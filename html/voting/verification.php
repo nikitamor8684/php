@@ -40,29 +40,31 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
  
     $sql = "SELECT * FROM voter where voterid='$voteid'";
     $result = mysqli_query($conn7,$sql);
-   if($result){
-    // if(mysqli_num_rows($result)>0){
-        header('location:voteparty.php?voterid='.$voteid);
-            }
-            else{
-            $sql1 = "SELECT * FROM votes where voterid='$voteid'";
-            $result1= mysqli_query($conn7,$sql1);
-            if($result1){
+    if(mysqli_num_rows($result)>0){
+            
+        $sql1 = "SELECT * FROM votes where voterid='$voteid'";
+        $result1= mysqli_query($conn7,$sql1);
+            
+            if(mysqli_num_rows($result1)>0){
                 echo "you have already voted";
             }
+            else{
+        header('location:voteparty.php?voterid='.$voteid);
+                
+            }
         }
-            // else{
-            //     echo "you are not eligible for voting";
-            // }
+        
+   
+    }
  
-}
+
 
     ?>
     <form action="" method="post">
     <h1 align="center">Enter your voter id</h1><br>
     <input type="text" id="id" name="voteid"><br>
     <input type="radio" id="radio">
-    <label for="radio">Forgot voter id</label>
+    <a href="forget.php">Forgot voter id</a>
     <div class="box">
  
             <button>Submit</button>"

@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-   
         body{
             display:flex;
             align-content:center;
@@ -29,6 +30,9 @@
         h1{
             display:inline-block;
             margin-left:200px;
+        }.box{
+            height:100%;
+            width:80%;
         }
         button{
             background-color:blue;
@@ -58,7 +62,7 @@ margin-left:100px;
     session_start();
     if(isset($_SESSION['AB'])){    
         $mob=$_SESSION['AB'];
-        $sql="SELECT * FROM admission ";
+        $sql="SELECT * FROM admission where mobileno='$mob' ";
         $result = mysqli_query($conn4,$sql);
         if($result->num_rows > 0){
             while($row=$result->fetch_assoc()){
@@ -76,56 +80,89 @@ margin-left:100px;
     }
     
     ?>
-    <form action="" method="POST">
-        <h1>Fee</h1>
-        <br>
-        <label for="name">Enter rollno</label>
-        <input type="text" name="rollno" class="a" value="<?php echo $rollno?>"><br>
-        <label for="name">Enter student name</label>
-        <input type="text" name="sname" class="a" value="<?php echo $sname?>"><br>
-        <label for="name">Enter father's  name</label>
-        <input type="text" name="fname" class="a" value="<?php echo $fname?>"><br>
-        <label for="dob">Enter date of birth</label>
-        <input type="date" name="dob" class="a" value="<?php echo $dob?>"><br>
-        <label for="course">Enter course name</label>
-        <input type="text" name="course" class="a" value="<?php echo $course?>"><br>
-        <label for="mob.">Enter mobile no.</label>
-        <input type="text" name="mob." class="a" value="<?php echo $mob ?>"><br>
-        <label for="almob.">Enter  alternate mobile no.</label>
-        <input type="text" name="almob." class="a" value="<?php echo $almobile ?>"><br>
-        <label for="red">Enter registeration date</label>
-        <input type="text" name="red" class="a" value="<?php echo $doa?>"><br>
-        <label for="rname">Received by</label>
-        <input type="text" name="rname" class="a"><br>
-        <label for="amount">Amount</label>
-        <input type="text" name="amount" class="a" ><br>
-        Payment method:
-        <input type="radio" name="online" value="online">
-        <label for="online">Online</label>
-        <input type="radio" name="online" value="cash">
-        <label for="cash">Cash</label><br>
-        <input type='submit' id='submit' class='a'>
-</form>
-<?php
+ <?php
 include "conn4.php";
 if($_SERVER['REQUEST_METHOD']=='POST'){
         $rollno=$_POST['rollno'];
-        $red=$_POST['red'];
+        $doa=$_POST['doa'];
         $rname=$_POST['rname'];
         $amount=$_POST['amount'];
         $payment=$_POST['online'];
 
-        $sql="INSERT INTO fees(rollno,regisdate,receivby,amount,payment) values('$rollno','$red','$rname','$amount','$payment')";
+        $sql="INSERT INTO fees(rollno,regisdate,receivby,amount,payment) values('$rollno','$doa','$rname','$amount','$payment')";
         $result=mysqli_query($conn4,$sql);
-        // session_start();
-        // $_SESSION['AB']="$mob";   
-        header('location:home.php');
-      }
+        
+        $_SESSION['ab']="$rollno";   
+        header('location:slip.php');
+    }
         
     
     ?>
-            
 
+<div data-aos="flip-left" class="box">
+<form action="" method="POST">
+<h1>Fees Receipt</h1>
+        <br>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Enter rollno</label>
+    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="rollno" value="<?php echo $rollno?>">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Enter student name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="sname" value="<?php echo $sname?>">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Enter father's name</label>
+      <input type="text" class="form-control" id="exampleCheck1" name="fname" value="<?php echo $fname?>">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Enter date of birth</label>
+      <input type="date" class="form-control" id="exampleCheck1" name="dob" value="<?php echo $dob?>">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Enter Course name</label>
+      <input type="text" class="form-control" id="exampleCheck1" name="dob" value="<?php echo $course ?>">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Enter mobile no.</label>
+      <input type="text" class="form-control" id="exampleCheck1" name="mob" value="<?php echo $mob?>">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Enter  alternate mobile no.</label>
+      <input type="text" class="form-control" id="exampleCheck1" name="almob" value="<?php echo $almobile?>">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Enter registeration date</label>
+      <input type="text" class="form-control" id="exampleCheck1" name="doa" value="<?php echo $doa?>">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Received By</label>
+      <input type="text" class="form-control" id="exampleCheck1" name="rname">
+  </div>
+  <div class="mb-3 form-check">
+      <label class="form-check-label" for="exampleCheck1">Amount</label>
+      <input type="text" class="form-control" id="exampleCheck1" name="amount">
+  </div>
+Payment method:
+  <div class="mb-3 form-check">
+      <input type="radio" class="form-check-input" id="dat" name='online' value="online">
+      <label class="form-check-label" for="exampleCheck1">Online</label>
+</div>
+<div class="mb-3 form-check">
+
+      <input type="radio" class="form-check-input" id="dat" name='online' value="cash">
+      <label class="form-check-label" for="exampleCheck1">Cash</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    </div>
+
+            
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
 
 </body>
 </html>
